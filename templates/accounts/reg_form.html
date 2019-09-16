@@ -3,11 +3,19 @@
 
 {% block contenido %}
 <div class="container">
-    <h1>Register</h1>
+    <h1>Registro</h1>
+
     <form method="post">
         {% csrf_token %}
+        {% if messages %}
+                                    {% for message in messages %}
+                                        <div class="alert alert-{{ message.tags }}" role="alert">
+                                          {{ message }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
         {{ form.as_p }}
-        <button type="submit">Submit</button>
+        <button type="submit">Guardar</button>
     </form>
 </div>
 {% endblock %}

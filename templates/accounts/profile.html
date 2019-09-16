@@ -5,15 +5,15 @@
 
 {% block contenido %}
 <div class="container">
-    <h1>Profile</h1>
-    <p>Username: {{ user }}</p>
-    <p>First name: {{ user.first_name }}</p>
-    <p>Last name: {{ user.last_name }}</p>
+    <h1>Perfil</h1>
+    <p>Cuenta: {{ user }}</p>
+    <p>Nombre: {{ user.first_name }}</p>
+    <p>Apellidos: {{ user.last_name }}</p>
     <p>Email: {{ user.email }}</p>
-    <p>Description: {{ user.userprofile.description }}</p>
-    <p>Phone: {{ user.userprofile.phone }}</p>
-    <p>City: {{ user.userprofile.city }}</p>
-    <p>Website: {{ user.userprofile.website }}</p>
+    <p>Descripcion: {{ user.userprofile.description }}</p>
+    <p>Telefono: {{ user.userprofile.phone }}</p>
+    <p>Ciudad: {{ user.userprofile.city }}</p>
+    {% comment %} <p>Sitio web: {{ user.userprofile.website }}</p> {% endcomment %}
     {% if user.userprofile.image %}
     <img src="{{ user.userprofile.image.url }}" width="240">
     {% endif %}
